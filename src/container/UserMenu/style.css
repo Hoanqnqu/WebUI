@@ -1,0 +1,4 @@
+.ant-scroll-number-only-unit,
+.ant-badge .ant-badge-count-sm {
+    @apply text-[10px];
+}

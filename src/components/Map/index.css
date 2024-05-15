@@ -1,0 +1,10 @@
+.leaflet-marker-pane .custom-div-icon {
+    @apply flex items-center justify-center rounded-2xl bg-black p-4  px-7 text-white shadow-md;
+}
+.leaflet-marker-pane .custom-div-icon-white {
+    @apply flex items-center justify-center rounded-2xl bg-white p-4  px-7 text-black shadow-md;
+}
+
+.leaflet-popup-tip {
+    @apply hidden;
+}

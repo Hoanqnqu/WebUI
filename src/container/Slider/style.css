@@ -1,0 +1,32 @@
+.ant-menu-light.ant-menu-root.ant-menu-inline {
+    @apply bg-transparent;
+}
+
+.ant-menu-title-content {
+    @apply font-medium;
+}
+
+.ant-menu-item-selected .ant-menu-title-content {
+    @apply font-bold;
+}
+
+.ant-menu-light .ant-menu-item-selected,
+.ant-menu-light .ant-menu-submenu-selected > .ant-menu-submenu-title {
+    @apply text-secondary;
+}
+
+.ant-menu-light .ant-menu-item-selected {
+    @apply bg-[#FFF0E7];
+}
+
+.ant-menu .ant-menu-submenu-arrow {
+    @apply w-0;
+}
+
+.ant-menu .ant-menu-item .anticon + span {
+    @apply ms-4;
+}
+
+.ant-menu-inline .ant-menu-item {
+    @apply h-12;
+}

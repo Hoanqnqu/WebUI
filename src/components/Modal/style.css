@@ -1,0 +1,75 @@
+.ant-modal {
+    @apply top-8 w-fit !important;
+}
+
+.ant-modal-content {
+    @apply w-fit min-w-[28rem] max-w-[30rem];
+}
+
+.ant-col-14 {
+    @apply max-w-full;
+}
+
+.ant-upload,
+.ant-form-item .ant-form-item-control-input-content button {
+    @apply w-full;
+}
+
+.ant-btn {
+    @apply px-2.5;
+}
+
+.ant-upload > .ant-btn-default {
+    @apply text-gray-300;
+}
+
+.ant-form-item-control-input-content > .ant-btn-default:not(:disabled):not(.ant-btn-disabled) {
+    @apply font-medium;
+}
+
+.ant-form-item-control-input-content > .ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+    @apply bg-primary/95 text-white shadow-2xl transition-all duration-100;
+}
+
+/* .ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+    @apply text-gray-300;
+} */
+
+.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover > svg {
+    @apply text-primary;
+}
+
+.ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover > span {
+    @apply text-primary;
+}
+
+.ant-select-open > span {
+    @apply text-primary;
+}
+
+.ant-form-item-explain-error {
+    @apply text-sm font-medium;
+}
+
+.ant-form-item-with-help .ant-form-item-explain {
+    @apply h-6;
+}
+
+.ant-upload-wrapper {
+    @apply flex-1;
+}
+
+.ant-upload-wrapper .ant-upload {
+    @apply flex items-center gap-4;
+}
+
+.ant-image .ant-image-mask {
+    @apply static;
+}
+
+.ant-image {
+    @apply h-10 w-10;
+}
+.ant-carousel {
+    @apply w-full;
+}

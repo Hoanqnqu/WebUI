@@ -1,0 +1,90 @@
+@import url("@fortawesome/fontawesome-free/css/all.css");
+@import url("leaflet.awesome-markers/dist/leaflet.awesome-markers.css");
+@import url("leaflet/dist/leaflet.css");
+@import url("swiper/css");
+@import url("swiper/css/pagination");
+@import url("swiper/css/scrollbar");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary-color: #e36414;
+    --secondary-color: #1d5868;
+    --white-color: #ffffff;
+    --gray-color: #e0e0e0;
+    --black-color: #000000;
+}
+
+html {
+    @apply scroll-smooth;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--gray-color);
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.leaflet-container {
+    @apply z-10;
+}
+
+.leaflet-top.leaflet-left {
+    @apply z-50;
+}
+
+.leaflet-bottom.leaflet-right {
+    @apply z-10;
+}
+
+.awesome-marker .icon-white {
+    @apply z-50 text-sm !important;
+}
+
+.grid_product {
+    grid-template-columns: repeat(auto-fit, 240px);
+    grid-template-rows: repeat(auto-fit, 320px);
+    gap: 60px;
+}
+
+.MuiAutocomplete-input {
+    @apply !p-0;
+}
+
+.MuiAutocomplete-inputRoot {
+    overflow-x: hidden;
+    overflow: auto;
+    width: 100%;
+    height: 40px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.MuiAutocomplete-inputRoot::-webkit-scrollbar {
+    @apply hidden;
+}
+
+.MuiAutocomplete-inputRoot:focus {
+    @apply border-none;
+}
+
+.swiper-pagination {
+    @apply !z-50 h-6;
+}
+
+.swiper-pagination-bullet {
+    @apply bg-gray-500 !important;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    @apply !bg-primary;
+}

@@ -1,0 +1,111 @@
+.ant-pagination .ant-pagination-item {
+    @apply me-4 bg-gray-0 text-black;
+}
+
+.ant-pagination .ant-pagination-item a {
+    @apply flex h-full items-center justify-center;
+}
+
+.ant-table-wrapper .ant-table-tbody .ant-table-row > .ant-table-cell-row-hover {
+    @apply bg-primary/10;
+}
+
+.ant-table-wrapper .ant-table-thead > tr > th {
+    @apply bg-white;
+}
+
+.ant-table-wrapper .ant-table-tbody > tr > td {
+    @apply p-3;
+}
+
+.ant-table-wrapper .ant-table-pagination.ant-pagination {
+    @apply mt-1 md:mt-2 lg:mt-4;
+}
+
+.ant-pagination .ant-pagination-item-active {
+    @apply border-none bg-secondary transition-all duration-300;
+}
+
+.ant-pagination .ant-pagination-item-active a {
+    @apply text-white;
+}
+
+.ant-pagination .ant-pagination-item-active a:hover,
+.ant-pagination .ant-pagination-item-active a:focus {
+    @apply text-white;
+}
+
+.ant-pagination .ant-pagination-prev,
+.ant-pagination .ant-pagination-next {
+    @apply me-4 font-semibold text-secondary drop-shadow-lg;
+}
+
+.ant-pagination .ant-pagination-disabled,
+.ant-pagination .ant-pagination-disabled:hover {
+    @apply pointer-events-none opacity-20;
+}
+
+.ant-table-wrapper .ant-table-column-sorter-up.active,
+.ant-table-wrapper .ant-table-column-sorter-down.active {
+    @apply text-primary;
+}
+
+.ant-dropdown .ant-table-filter-dropdown .ant-dropdown-menu {
+    @apply flex flex-col gap-1;
+}
+
+.ant-dropdown .ant-table-filter-dropdown .ant-checkbox-wrapper + span {
+    @apply ps-3 font-medium text-secondary;
+}
+
+.ant-btn-link,
+.ant-table-wrapper .ant-table-filter-trigger.active {
+    @apply text-primary;
+}
+
+.ant-btn-link {
+    @apply font-medium;
+}
+
+.ant-btn-link:not(:disabled):not(.ant-btn-disabled):hover {
+    @apply text-primary/80;
+}
+
+.ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover {
+    @apply bg-primary font-medium;
+}
+
+.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item-selected {
+    @apply bg-primary/10 text-primary;
+}
+
+.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:hover {
+    @apply bg-primary/10;
+}
+
+.ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover .ant-checkbox-inner,
+.ant-checkbox:not(.ant-checkbox-disabled):hover .ant-checkbox-inner {
+    @apply border-primary;
+}
+
+.ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover
+    .ant-checkbox-checked:not(.ant-checkbox-disabled)
+    .ant-checkbox-inner,
+.ant-checkbox-checked:not(.ant-checkbox-disabled):hover .ant-checkbox-inner {
+    @apply border-primary bg-primary;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+    @apply border-primary bg-primary;
+}
+
+.ant-table-wrapper
+    .ant-table-thead
+    > tr
+    > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+    @apply hidden;
+}
+
+.ant-table-filter-dropdown-btns .ant-btn-primary {
+    @apply bg-primary;
+}
