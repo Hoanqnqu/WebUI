@@ -5,20 +5,12 @@ import { MODAL, PAGE } from "@/utils/constants/GlobalConst"
 import { FaPlus } from "react-icons/fa6"
 
 interface TableToolbarProps {
-    type: PAGE.ROOM | PAGE.BLOCK | PAGE.USER | PAGE.UTILITY | PAGE.RENTAL | PAGE.TRANSACTION | PAGE.PAYMENT| PAGE.CATEGORY
+    type: PAGE.USER| PAGE.NEWS | PAGE.CATEGORY
 }
 
 const TableToolbar: React.FC<TableToolbarProps> = ({ type }) => {
     const dispatch = useAppDispatch()
 
-    if (type === PAGE.TRANSACTION) return null
-
-    if (type === PAGE.RENTAL || type === PAGE.PAYMENT)
-        return (
-            <div className="mb-4 flex justify-between">
-                <Search />
-            </div>
-        )
     return (
         <div className="mb-4 flex justify-between">
             <Search />

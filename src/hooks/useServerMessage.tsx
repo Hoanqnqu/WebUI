@@ -13,7 +13,7 @@ function useServerMessage({ data, error }: TServerMessage) {
     const isOpen = useAppSelector((state) => state.modal.isOpen)
 
     useEffect(() => {
-        if (data && (data.status === "success" || data.success === true)) {
+        if (data && (data.status === 200 || data.success === 201)) {
             message.success(data.message)
             isOpen && dispatch(closeModal())
         } else if (error) {

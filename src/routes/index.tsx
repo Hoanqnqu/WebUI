@@ -9,7 +9,8 @@ const AdminPage = lazy(() => import("../pages/admin"))
 
 
 const CategoriesPage = lazy(() => import("../pages/admin/categories"))
-
+const UserPage = lazy(() => import("../pages/admin/users"))
+const NewsPage = lazy(() => import("../pages/admin/news"))
 const LoginPage = lazy(() => import("../pages/auth/Login"))
 
     
@@ -22,6 +23,8 @@ const MainRoute = () => {
                             
                             <Route index element={<Navigate to={SITE_MAP.CATEGORIES} replace />} />
                             <Route path={SITE_MAP.CATEGORIES} element={<CategoriesPage />} />
+                            <Route path={SITE_MAP.USERS} element={<UserPage />} />
+                            <Route path={SITE_MAP.NEWS} element={<NewsPage />} />
                         </Route>
                     <Route path={SITE_MAP.AUTH.LOGIN} element={<LoginPage />} />
                     <Route path="*" element={<LoginPage />} />

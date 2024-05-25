@@ -112,11 +112,9 @@ export type PaymentStatusType = keyof typeof PAYMENT_STATUS_COLORS
 export enum PAGE {
     USER = "USER",
     ROOM = "ROOM",
-    BLOCK = "BLOCK",
-    UTILITY = "UTILITY",
-    RENTAL = "RENTAL",
-    TRANSACTION = "TRANSACTION",
-    PAYMENT = "PAYMENT",
+    NEWS = "NEWS",
+
+
     CATEGORY = "CATEGORY",
 }
 
@@ -124,14 +122,17 @@ export const MODAL = {
     ADD: {
         CATEGORY: "ADD_CATEGORY",
         USER: "ADD_USER",
+        NEWS: "ADD_NEWS",
     },
     UPDATE: {
         CATEGORY: "UPDATE_CATEGORY",
         USER: "UPDATE_USER",
+        NEWS: "UPDATE_NEWS",
     },
     DELETE: {
         CATEGORY: "DELETE_CATEGORY",
         USER: "DELETE_USER",
+        NEWS: "DELETE_NEWS",
     },
     DISABLE: {
         USER: "DISABLE_USER",

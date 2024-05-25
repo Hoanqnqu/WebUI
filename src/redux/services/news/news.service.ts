@@ -11,10 +11,10 @@ export const newsApi = createCategoryWithAuth.injectEndpoints({
     endpoints: (builder) => ({
         getNews: builder.query<INews[], string>({
             query: (keyword) => ({
-                url: `/articles?keyword=${keyword}`
+                url: `/news?keyword=${keyword}`
             }),
             transformResponse: (response: IListNewsRespone) => {
-                return response.data.news
+                return response.data
             },
             providesTags: ["News"]
         }),

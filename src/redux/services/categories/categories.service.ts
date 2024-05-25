@@ -16,7 +16,7 @@ export const categoriesApi = createCategoryWithAuth.injectEndpoints({
                 url: `/categories?keyword=${keyword}`
             }),
             transformResponse: (response: ICategoriesResponse) => {
-               return response.data.categories
+               return response.data
             },
             providesTags: ["Categories"]
         }),

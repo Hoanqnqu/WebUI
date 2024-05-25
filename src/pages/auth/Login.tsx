@@ -47,19 +47,6 @@ const Login = () => {
         }
     }
 
-    const loginWithGG = useGoogleLogin({
-        onSuccess: async (tokenResponse) => {
-            console.log(tokenResponse.access_token || "")
-            const res = await continueWithGG({ accessToken: tokenResponse.access_token || "" }).unwrap()
-            if (res.status === "SUCCESS" && res.data) {
-                dispatch(setCredentials({ accessToken: res.data.token }))
-                navigate("/")
-            }
-        },
-        onError: () => {
-            console.log("Login Failed")
-        }
-    })
 
     return (
         <Account>
@@ -76,13 +63,7 @@ const Login = () => {
                             >
                                 <h1 className="my-2 text-4xl font-semibold text-secondary ">Login to your account</h1>
                                 <div className="mt-3">
-                                    <p className="mb-1 text-[14px] text-secondary">
-                                        Not a member?
-                                        <Link to={"/register"} className="font-medium text-primary hover:underline">
-                                            {" "}
-                                            Create account
-                                        </Link>
-                                    </p>
+                                   
                                     <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
                                         <InputWithLabel
                                             placeholer="Email *"
@@ -103,18 +84,8 @@ const Login = () => {
                                         <ButtonAuth text="Login" type="submit" />
                                     </form>
                                     <div className="mt-4 flex items-center justify-between">
-                                        <Link
-                                            to="/forgot-password"
-                                            className="text-[14px] text-secondary hover:underline"
-                                        >
-                                            Forgot your password?
-                                        </Link>
-                                        <button
-                                            className="flex items-center justify-center gap-2 rounded-[6px] border-2 border-neutral-300 p-1 text-[14px] hover:border-neutral-500 hover:bg-slate-200"
-                                            onClick={() => loginWithGG()}
-                                        >
-                                            Countinue with <img src={logoGG} alt="logoGG" />
-                                        </button>
+                                       
+
                                     </div>
                                 </div>
                             </motion.div>

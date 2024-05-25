@@ -9,7 +9,7 @@ const ModalUpdate = (props: IModal) => {
     const { title, data: uti } = props
     console.log("data", uti)
     const [updateUtility, { data, error, isLoading }] = useUpdateCategoryMutation()
-
+    console.log(data)
     useServerMessage({ data: data!, error: error })
 
     const onFinish = async (values: any) => {

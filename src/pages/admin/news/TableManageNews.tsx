@@ -22,15 +22,45 @@ const TableManageNews = ()=>{
             render: (_, __, index) => <span className=" text-sm font-semibold">{index + 1}</span>
         },
         {
-            title: <span className="font-bold">Title</span>,
-            key: "name",
-            width: "30%",
+            title: <span className="font-bold">Author</span>,
+            key: "auth",
+            width: "10%",
+            sorter: (a, b) => a.author.length - b.author.length,
             render: (record: INews) => (
-                <div className="flex items-center">
-                    <span className="ml-2 text-sm font-semibold">{record?.title}</span>
-                </div>
-            )
-        },
+              <span className="text-sm font-medium">{record?.author}</span>
+            ),
+          },
+          {
+            title: <span className="font-bold">Title</span>,
+            key: "title",
+            width: "15%",
+            sorter: (a, b) => a.title.length - b.title.length,
+            render: (record: INews) => (
+              <span className="text-sm font-medium">{record?.title}</span>
+            ),
+          },
+          {
+            title: <span className="font-bold">Description</span>,
+            key: "description",
+            width: "40%",
+            render: (record: INews) => (
+              <span className="text-sm font-medium">{record?.description}</span>
+            ),
+          },
+          {
+            title: <span className="font-bold">Published At</span>,
+            key: "publish_at",
+            width: "15%",
+            sorter: (a, b) => a.publish_at.localeCompare(b.publish_at),
+            render: (record: INews) => (
+              <div className="flex items-center">
+                <span className="ml-2 text-sm font-semibold">
+                  {/* <Moment format="YYYY/MM/DD">1976-04-19T12:59-0500</Moment> */}
+                  {record?.publish_at}
+                </span>
+              </div>
+            ),
+          },
         {
             title: <span className="text-center font-bold">Action</span>,
             key: "action",

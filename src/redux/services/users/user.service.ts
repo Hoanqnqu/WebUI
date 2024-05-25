@@ -1,16 +1,19 @@
-import { ICreateUserRequest, IUpdateUserRequest, IUser, IUserQuery, IUsersResponse } from "@/interfaces/user.interface"
+import { ICreateUserRequest, IUpdateUserRequest, IUser, IUserResponse, IUsersResponse } from "@/interfaces/user.interface"
 import { createApiWithAuth } from "../apiWithAuth.service"
 
 const creatApiUserWithAuth = createApiWithAuth("userApi", ["Users"])
 export const userApi = creatApiUserWithAuth.injectEndpoints({
   endpoints: (builder) => ({
-        getUsers: builder.query<IUsersResponse, IUserQuery>({
-            query({ keyword = "" }) {
-                return `/users?keyword=${keyword}`
+        getUsers: builder.query<IUser[], string>({ 
+            query() {
+                return `/users`
             },
+            transformResponse: (response: IUsersResponse) => {
+                return response.data
+             },
             providesTags: ["Users"]
         }),
-        createUser: builder.mutation<IUsersResponse, ICreateUserRequest>({
+        createUser: builder.mutation<IUserResponse, ICreateUserRequest>({
             query: (body) => ({
                 url: `/users`,
                 method: "POST",
@@ -18,12 +21,12 @@ export const userApi = creatApiUserWithAuth.injectEndpoints({
             }),
             invalidatesTags: ["Users"]
         }),
-        updateUser: builder.mutation<IUsersResponse, IUpdateUserRequest>({
-            query: ({ id, formData }) => {
+        updateUser: builder.mutation<IUserResponse, IUpdateUserRequest>({
+            query: ({ id, body }) => {
                 return {
                     url: `/users/${id}`,
-                    method: "PATCH",
-                    body: formData
+                    method: "PUT",
+                    body
                 }
             },
             invalidatesTags: ["Users"]
@@ -35,10 +38,6 @@ export const userApi = creatApiUserWithAuth.injectEndpoints({
             }),
             invalidatesTags: ["Users"]
         }),
-        getLandLord: builder.query<any, void>({
-            query: () => `/users/mods`,
-            providesTags: ["Users"]
-        })
     })
 })
 
@@ -47,5 +46,4 @@ export const {
     useCreateUserMutation,
     useUpdateUserMutation,
     useDeleteUserMutation,
-    useGetLandLordQuery
 } = userApi

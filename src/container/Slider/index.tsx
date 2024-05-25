@@ -72,7 +72,7 @@ const Slider = () => {
         <div
             className={`${
                 isExpanding ? "w-60" : "w-20"
-            } trasition relative flex h-screen flex-col items-center rounded-br-3xl rounded-tr-3xl border border-gray-200 bg-white duration-200 peer-hover:bg-red-500`}
+            } trasition relative flex h-screen flex-col items-center rounded-br-3xl rounded-tr-3xl border border-gray-200 bg-white duration-200 peer-hover:bg-blue-500`}
         >
             <div className="h-20 py-4">
                 <Logo isOpen={isExpanding} />

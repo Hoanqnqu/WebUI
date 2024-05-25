@@ -1,7 +1,8 @@
 export interface INews {
     id?: string
-    auth: string
+    author: string
     title: string
+    content: string
     description: string
     url: string
     image_url: string
@@ -11,9 +12,8 @@ export interface INews {
 }
 
 export interface IListNewsRespone {
-    data: {
-        news: INews[]
-    }
+    data: INews[]
+
     message: string
     status: string
 }
@@ -28,11 +28,12 @@ export interface INewsQuery {
 }
 
 export interface INewsRequest {
-    auth: string
+    author: string
     title: string
     description: string
     url: string
     image_url: string
     publish_at: string
     category_ids?: string[]
+    content: string
 }

@@ -3,9 +3,7 @@ export interface ICategory {
     id: number
 }
 export interface ICategoriesResponse {
-    data: {
-        categories: ICategory[]
-    }
+    data: ICategory[]
     message: string
     status: string
 }
