@@ -4,7 +4,7 @@ import { useState } from "react"
 import ArrowCircle from "../../assets/icons/ArrowCircle"
 import { useNavigate } from "react-router-dom"
 import { SITE_MAP } from "@/utils/constants/Path"
-import { FaRegUser } from "react-icons/fa"
+import { FaNewspaper, FaRegUser } from "react-icons/fa"
 import { BiHomeAlt } from "react-icons/bi"
 import Logo from "@/components/Logo"
 import { ROLE } from "@/utils/constants/GlobalConst"
@@ -40,6 +40,8 @@ const Slider = () => {
 
     let items: MenuProps["items"] = [
         { type: "divider" },
+        getItem(`${isExpanding ? "News" : ""}`, "news", <FaNewspaper className="h-5 w-5" />),
+        getItem(`${isExpanding ? "Users" : ""}`, "users", <FaRegUser className="h-5 w-5" />),
         getItem(`${isExpanding ? "Categories" : "Categories"}`, "categories", <TbHomeCog className="h-5 w-5" />),
 
         { type: "divider" }
@@ -51,6 +53,12 @@ const Slider = () => {
 
     const onClick: MenuProps["onClick"] = (e) => {
         switch (e.key) {
+            case "news":
+                navigate(SITE_MAP.NEWS)
+                break
+            case "users":
+                navigate(SITE_MAP.USERS)
+                break
             case "categories":
                 navigate(SITE_MAP.CATEGORIES)
                 break

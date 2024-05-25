@@ -19,9 +19,6 @@ export interface IListNewsRespone {
 }
 
 export interface INewsRespone {
-    data: {
-        roomBlock: INews
-    }
     message: string
     status: string
 }

@@ -19,6 +19,7 @@ const MainRoute = () => {
             <BrowserRouter>
                 <Routes>
                         <Route path={SITE_MAP.ADMIN} element={<AdminPage />}>
+                            
                             <Route index element={<Navigate to={SITE_MAP.CATEGORIES} replace />} />
                             <Route path={SITE_MAP.CATEGORIES} element={<CategoriesPage />} />
                         </Route>

@@ -5,7 +5,7 @@ import { MODAL, PAGE } from "@/utils/constants/GlobalConst"
 import { FaPlus } from "react-icons/fa6"
 
 interface TableToolbarProps {
-    type: PAGE.ROOM | PAGE.BLOCK | PAGE.USER | PAGE.UTILITY | PAGE.RENTAL | PAGE.TRANSACTION | PAGE.PAYMENT
+    type: PAGE.ROOM | PAGE.BLOCK | PAGE.USER | PAGE.UTILITY | PAGE.RENTAL | PAGE.TRANSACTION | PAGE.PAYMENT| PAGE.CATEGORY
 }
 
 const TableToolbar: React.FC<TableToolbarProps> = ({ type }) => {

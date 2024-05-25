@@ -5,15 +5,18 @@ import ModalAdd from "./modalAdd"
 
 import { ICategory } from "@/interfaces/category.interface"
 import ModalDelete from "./modalDelete"
+import ModalUpdate from "./modalUpdate"
 
 const ModalCategory = () => {
     const type = useAppSelector((state) => state.modal.type)
     const data = useAppSelector((state) => state.modal.data) as ICategory
     const getModalContent = () => {
         switch (type) {
-            case MODAL.ADD.UTILITY:
+            case MODAL.ADD.CATEGORY:
                 return <ModalAdd title="Add New Category" />
-            case MODAL.DELETE.UTILITY:
+            case MODAL.UPDATE.CATEGORY:
+                return <ModalUpdate title="Edit Cateogy Infomation" data={data} />    
+            case MODAL.DELETE.CATEGORY:
                 return <ModalDelete title="Delete Category" data={data} />
             default:
                 return null

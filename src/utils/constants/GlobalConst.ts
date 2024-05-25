@@ -116,33 +116,22 @@ export enum PAGE {
     UTILITY = "UTILITY",
     RENTAL = "RENTAL",
     TRANSACTION = "TRANSACTION",
-    PAYMENT = "PAYMENT"
+    PAYMENT = "PAYMENT",
+    CATEGORY = "CATEGORY",
 }
 
 export const MODAL = {
     ADD: {
+        CATEGORY: "ADD_CATEGORY",
         USER: "ADD_USER",
-        ROOM: "ADD_ROOM",
-        BLOCK: "ADD_BLOCK",
-        UTILITY: "ADD_UTILITY",
-        PAYMENT: "ADD_PAYMENT"
     },
     UPDATE: {
+        CATEGORY: "UPDATE_CATEGORY",
         USER: "UPDATE_USER",
-        ROOM: "UPDATE_ROOM",
-        BLOCK: "UPDATE_BLOCK",
-        UTILITY: "UPDATE_UTILITY",
-        RENTAL: "UPDATE_RENTAL",
-        PASSWORD: "UPDATE_PASSWORD",
-        HOST: "HOST",
-        PAYMENT: "UPDATE_PAYMENT"
     },
     DELETE: {
+        CATEGORY: "DELETE_CATEGORY",
         USER: "DELETE_USER",
-        ROOM: "DELETE_ROOM",
-        BLOCK: "DELETE_BLOCK",
-        UTILITY: "DELETE_UTILITY",
-        PAYMENT: "DELETE_PAYMENT"
     },
     DISABLE: {
         USER: "DISABLE_USER",
@@ -161,21 +150,6 @@ export const MODAL = {
         RENTAL: "VIEW_RENTAL",
         PAYMENT: "VIEW_PAYMENT"
     },
-    SHARE: {
-        ROOM_DETAIL: "SHARE_ROOM_DETAIL"
-    },
-    FILTER: {
-        ROOM_FINDING: "ROOM_FINDING_FILTER"
-    },
-    RENTAL: {
-        END: "END_RENTAL",
-        APPROVE: "APPROVE_RENTAL",
-        CANCEL: "CANCEL_RENTAL",
-        ACCEPT_BREAK: "ACCEPT_BREAK_RENTAL"
-    },
-    REVIEW: {
-        RENTAL: "REVIEW_RENTAL"
-    }
 } as const
 
 export const monthFormat = "YYYY-MM"

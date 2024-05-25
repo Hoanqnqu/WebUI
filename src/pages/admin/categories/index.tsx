@@ -9,7 +9,7 @@ const Category = () => {
         <div className="flex-1 px-6 py-4">
             <PageHeader title="Categories Management" />
             <Modal />
-            <TableToolbar type={PAGE.UTILITY} />
+            <TableToolbar type={PAGE.CATEGORY} />
             <TableManageUtilities />
         </div>
     )

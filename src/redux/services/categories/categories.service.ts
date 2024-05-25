@@ -2,8 +2,9 @@ import { createApiWithAuth } from "../apiWithAuth.service"
 import {
     ICreateCategoryRequest,
     ICategory,
-    ICategoryCUResponse,
-    ICategoryResponse
+    ICategoryResponse,
+    ICategoriesResponse,
+    IUpdateCategoryRequest
 } from "@/interfaces/category.interface"
 
 const createCategoryWithAuth = createApiWithAuth("categoryApi", ["Categories"])
@@ -14,23 +15,12 @@ export const categoriesApi = createCategoryWithAuth.injectEndpoints({
             query: (keyword) => ({
                 url: `/categories?keyword=${keyword}`
             }),
-            transformResponse: (response: ICategoryResponse) => {
-                const utilities = response.data.utilities
-                const uniqueNames = new Set<string>()
-                const uniqueUtilities: ICategory[] = []
-
-                for (const item of utilities) {
-                    if (!uniqueNames.has(item.name)) {
-                        uniqueNames.add(item.name)
-                        uniqueUtilities.push(item)
-                    }
-                }
-
-                return uniqueUtilities
+            transformResponse: (response: ICategoriesResponse) => {
+               return response.data.categories
             },
             providesTags: ["Categories"]
         }),
-        createCategory: builder.mutation<ICategoryCUResponse, ICreateCategoryRequest>({
+        createCategory: builder.mutation<ICategoryResponse, ICreateCategoryRequest>({
             query: (body) => ({
                 url: `/categories`,
                 method: "POST",
@@ -38,7 +28,15 @@ export const categoriesApi = createCategoryWithAuth.injectEndpoints({
             }),
             invalidatesTags: ["Categories"]
         }),
-        deleteCategory: builder.mutation<{ id: number }, ICreateCategoryRequest>({
+        updateCategory: builder.mutation<ICategoryResponse, IUpdateCategoryRequest>({
+            query: ({ id, body }) => ({
+                url: `/categories/${id}`,
+                method: "PUT",
+                body
+            }),
+            invalidatesTags: ["Categories"]
+        }),
+        deleteCategory: builder.mutation<ICategoryResponse, string>({
             query: (id) => ({
                 url: `/categories/${id}`,
                 method: "DELETE"
@@ -48,5 +46,5 @@ export const categoriesApi = createCategoryWithAuth.injectEndpoints({
     })
 })
 
-export const { useGetCategoriesQuery, useCreateCategoryMutation, useDeleteCategoryMutation } =
+export const { useGetCategoriesQuery, useCreateCategoryMutation,useUpdateCategoryMutation, useDeleteCategoryMutation } =
 categoriesApi

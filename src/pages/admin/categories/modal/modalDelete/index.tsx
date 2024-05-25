@@ -7,7 +7,7 @@ import { Button, Spin } from "antd"
 const ModalDelete = (props: IModal) => {
     const { title, data: utility } = props
     const { id } = utility
-
+    console.log(id)
     const [deleteUtility, { data, error, isLoading }] = useDeleteCategoryMutation()
 
     const onDelete = async () => {

@@ -12,7 +12,7 @@ export const useMenuActions = () => {
             {
                 label: (
                     <div
-                        onClick={() => dispacth(openModal({ type: MODAL.UPDATE.CATEGORY, data: record }))}
+                        onClick={() => dispacth(openModal({ type: MODAL.UPDATE.USER, data: record }))}
                         className="flex justify-between font-medium text-yellow-500"
                     >
                         Update <TbEdit className="ml-2.5 h-5 w-5" />
@@ -29,7 +29,7 @@ export const useMenuActions = () => {
                         onClick={() =>
                             dispacth(
                                 openModal({
-                                    type: MODAL.DELETE.CATEGORY,
+                                    type: MODAL.DELETE.USER,
                                     data: record
                                 })
                             )
