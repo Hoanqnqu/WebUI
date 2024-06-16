@@ -9,16 +9,10 @@ export const normFile = (e: any) => {
 
 /** Create */
 
-export const createUserFormData = (values: any) => {
+export const uploadImageFormData = (values: any) => {
     const formData = new FormData()
-    formData.append("email", values.email)
-    formData.append("firstName", values.firstName)
-    formData.append("lastName", values.lastName)
-    formData.append("phoneNumber", values.phoneNumber)
-    formData.append("role", values.role)
-    if (values.photo) formData.append("photo", values.photo[0].originFileObj)
-    if (values.password) formData.append("password", values.password)
-
+    console.log(values)
+    if (values.image) formData.append("image", values.image[0].originFileObj)
     return formData
 }
 

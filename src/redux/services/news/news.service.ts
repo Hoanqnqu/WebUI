@@ -40,7 +40,7 @@ export const newsApi = createCategoryWithAuth.injectEndpoints({
                 method: "DELETE"
             }),
             invalidatesTags: ["News"]
-        })
+        }),
     })
 })
-export const { useGetNewsQuery } = newsApi
+export const { useGetNewsQuery, useCreateNewsMutation, useUpdateNewsMutation } = newsApi

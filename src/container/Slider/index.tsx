@@ -14,6 +14,8 @@ import Button from "@/components/Button"
 import { TbHomeCog } from "react-icons/tb"
 
 import useAuth from "@/hooks/useAuth"
+import { logOut } from "@/redux/features/auth/auth.slice"
+import { useAppDispatch } from "@/redux/hook"
 
 type MenuItem = Required<MenuProps>["items"][number]
 
@@ -37,7 +39,7 @@ const Slider = () => {
     const { role } = useAuth()
     const [isExpanding, setIsExpanding] = useState(false)
     const navigate = useNavigate()
-
+    const dispatch = useAppDispatch()
     let items: MenuProps["items"] = [
         { type: "divider" },
         getItem(`${isExpanding ? "News" : ""}`, "news", <FaNewspaper className="h-5 w-5" />),
@@ -87,9 +89,14 @@ const Slider = () => {
                 className={`w-full rounded-br-3xl rounded-tr-3xl border-none`}
             />
 
-            <div className="absolute bottom-4 w-full px-2">
+            <div className="absolute bottom-4 w-full px-2"> 
                 <Button
-                    onClick={() => navigate(SITE_MAP.INDEX)}
+                    onClick={() =>{
+                        dispatch(logOut())
+                        navigate(SITE_MAP.INDEX)
+                    }
+                       
+                        }
                     className="w-full rounded-xl bg-primary py-2.5 text-white shadow-md shadow-primary/60 transition duration-150 hover:shadow-md hover:shadow-primary/90"
                 >
                     <MdLogout className="h-5 w-5" /> {isExpanding ? "Logout" : ""}

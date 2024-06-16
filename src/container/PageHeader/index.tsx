@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom"
-import UserMenu from "../UserMenu"
 import { styleOrEmpty } from "@/utils/helpers"
 
 interface IPageHeader {
@@ -28,7 +27,7 @@ const PageHeader = (props: IPageHeader) => {
                     </>
                 )}
             </div>
-            <UserMenu />
+
         </div>
     )
 }

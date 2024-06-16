@@ -7,7 +7,7 @@ export interface INews {
     url: string
     image_url: string
     publish_at: string
-    category_ids?: string[]
+    categories?: string[]
     deletedAt?: string
 }
 
@@ -34,6 +34,6 @@ export interface INewsRequest {
     url: string
     image_url: string
     publish_at: string
-    category_ids?: string[]
+    categories?: string[]
     content: string
 }

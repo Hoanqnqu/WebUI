@@ -30,36 +30,9 @@ const UserMenu = () => {
             case "propfile":
                 navigate(SITE_MAP.MY_PROFILE)
                 break
-            case "checklist":
-                navigate(SITE_MAP.MY_CHECKLIST)
-                break
-            case "my-rental":
-                navigate(SITE_MAP.MY_RENTAL)
-                break
-            case "my-statistics":
-                navigate(SITE_MAP.MY_STATISTICS)
-                break
-            case "my-payment":
-                navigate(SITE_MAP.MY_PAYMENT)
-                break
-            case "become-host":
-                navigate(SITE_MAP.BECOME_HOST)
-                break
-            case "admin":
-                navigate(SITE_MAP.ADMIN)
-                break
-            case "mod":
-                navigate(SITE_MAP.MOD)
-                break
             case "logout":
                 dispatch(logOut())
                 navigate(SITE_MAP.INDEX)
-                break
-            case "signup":
-                navigate(SITE_MAP.AUTH.REGISTER)
-                break
-            case "login":
-                navigate(SITE_MAP.AUTH.LOGIN)
                 break
             default:
                 break
@@ -72,46 +45,7 @@ const UserMenu = () => {
             label: "My Profile",
             icon: <BiUser className="mr-4 h-4 w-4" />
         },
-        {
-            key: "checklist",
-            label: "My Checklist",
-            icon: <FaRegHeart className="mr-4 h-4 w-4" />
-        },
-        {
-            key: "my-rental",
-            label: "My Rental",
-            icon: <LuClipboardSignature className="mr-4 h-4 w-4" />
-        },
-        {
-            key: "my-payment",
-            label: "My Payment",
-            icon: <MdOutlinePayment className="mr-4 h-4 w-4" />
-        },
-        {
-            key: "my-statistics",
-            label: "My Statistics",
-            icon: <LuLayoutDashboard className="mr-4 h-4 w-4" />
-        },
-        role === ROLE.USER
-            ? {
-                  key: "become-host",
-                  label: "Become a host",
-                  icon: <RiVipCrownLine className="mr-4 h-4 w-4" />
-              }
-            : undefined,
-        role === ROLE.ADMIN
-            ? {
-                  key: "admin",
-                  label: "Admin",
-                  icon: <MdOutlineAdminPanelSettings className="mr-4 h-4 w-4" />
-              }
-            : role === ROLE.MOD
-            ? {
-                  key: "mod",
-                  label: "Mod",
-                  icon: <MdOutlineAdminPanelSettings className="mr-4 h-4 w-4" />
-              }
-            : undefined,
+       
         {
             type: "divider"
         },

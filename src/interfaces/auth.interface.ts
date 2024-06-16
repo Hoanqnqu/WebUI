@@ -28,7 +28,7 @@ export interface INewPassword {
     email: string
 }
 export interface IAuthResponse {
-    data?: { token: string }
+    token: string 
     message: string
-    status: string
+    status: number
 }

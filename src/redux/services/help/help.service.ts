@@ -36,9 +36,9 @@ export const helpApi = creatApiAuthWithAuth.injectEndpoints({
             })
         }),
 
-        UploadImages: builder.mutation<{ status: string; message: string; data: string[] }, FormData>({
+        UploadImages: builder.mutation<{ status: string; message: string; data: string }, FormData>({
             query: (body) => ({
-                url: "/aws/upload",
+                url: "/image/upload",
                 method: "POST",
                 body
             })

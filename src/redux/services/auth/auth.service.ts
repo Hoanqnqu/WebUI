@@ -13,7 +13,7 @@ export const authApi = creatApiAuthWithAuth.injectEndpoints({
     endpoints: (builder) => ({
         login: builder.mutation<IAuthResponse, IAccountLogin>({
             query: (body) => ({
-                url: "/auth/login",
+                url: "/adminlogin",
                 method: "POST",
                 body
             })

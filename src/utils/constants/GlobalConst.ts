@@ -146,7 +146,7 @@ export const MODAL = {
     },
     VIEW: {
         USER: "VIEW_USER",
-        ROOM: "VIEW_ROOM",
+        NEWS: "VIEW_NEWS",
         BLOCK: "VIEW_BLOCK",
         RENTAL: "VIEW_RENTAL",
         PAYMENT: "VIEW_PAYMENT"
