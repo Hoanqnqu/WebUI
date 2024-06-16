@@ -1,25 +1,23 @@
-import { Avatar, Dropdown, MenuProps } from "antd"
-import { MdOutlineAdminPanelSettings, MdLogout, MdOutlinePayment } from "react-icons/md"
+import {  Dropdown, MenuProps } from "antd"
+import { MdLogout } from "react-icons/md"
 import { BiUser } from "react-icons/bi"
 import { logOut } from "@/redux/features/auth/auth.slice"
 import { useAppDispatch } from "@/redux/hook"
 import { MdOutlineMenu } from "react-icons/md"
 import { useState } from "react"
-import { ROLE } from "@/utils/constants/GlobalConst"
+
 import { SITE_MAP } from "@/utils/constants/Path"
 import { useNavigate } from "react-router-dom"
 import { VscSignIn } from "react-icons/vsc"
 import { HiLogin } from "react-icons/hi"
-import { AvatarDefault } from "@/assets/images"
+
 import { ItemType } from "antd/es/menu/hooks/useItems"
 import useAuth from "@/hooks/useAuth"
 import "./style.css"
-import { FaRegHeart } from "react-icons/fa"
-import { RiVipCrownLine } from "react-icons/ri"
-import { LuClipboardSignature, LuLayoutDashboard } from "react-icons/lu"
+
 
 const UserMenu = () => {
-    const { userInfo, role, isAuth } = useAuth()
+    const {  isAuth } = useAuth()
     const [isOpen, setIsOpen] = useState(false)
 
     const navigate = useNavigate()
@@ -91,7 +89,6 @@ const UserMenu = () => {
                     </button>
                 )} */}
                 <MdOutlineMenu className="h-5 w-5" />
-                <Avatar className="cursor-pointer" src={userInfo ? userInfo.photo : AvatarDefault} size={36} />
             </div>
         </Dropdown>
     )

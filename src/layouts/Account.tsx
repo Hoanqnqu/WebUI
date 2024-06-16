@@ -1,8 +1,6 @@
 import { Navigate } from "react-router-dom"
-import Logo from "@/assets/images/Logo.svg"
 import Cloud from "@/assets/images/cloud.png"
 import { useAppSelector } from "@/redux/hook"
-import { RentallyLogo } from "@/assets/images"
 
 type Props = {
     children: string | JSX.Element

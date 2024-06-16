@@ -5,7 +5,7 @@ import authSlice from "@/redux/features/auth/auth.slice"
 import searchSlice from "@/redux/features/search/search.slice"
 import searchMapSlice from "./features/search-map/search-map.slice"
 import modalSlice from "./features/modal/modal.slice"
-import generateRoomSlice from "./features/generateRoom/generateRoom.slice"
+
 import contractSlice from "./features/contract/contract.slice"
 
 
@@ -26,7 +26,7 @@ const rootReducer = combineReducers({
     searchMap: searchMapSlice,
     contract: contractSlice,
     modal: modalSlice,
-    generateRoom: generateRoomSlice
+
 })
 
 const customizedMiddleware = getDefaultMiddleware({

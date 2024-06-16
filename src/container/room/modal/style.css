@@ -1,7 +1,0 @@
-.ant-descriptions-item-label {
-    @apply w-32 text-right;
-}
-
-.ant-descriptions .ant-descriptions-item-label {
-    @apply font-bold text-black;
-}
