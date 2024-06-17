@@ -5,10 +5,12 @@ import { BASE_URL } from "@/utils/constants/GlobalConst"
 const baseQuery = fetchBaseQuery({
     baseUrl: BASE_URL,
     // credentials: 'include',
-    mode: "cors",
+    mode: "no-cors",
 
     prepareHeaders: (headers, { getState }) => {
-       
+        // headers.set("Accept", "true")
+        // headers.set("Access-Control-Allow-Origin", "*")
+        // headers.set("Cross-Origin-Opener-Policy", "same-origin-allow-popups")
         const token = (getState() as RootState).auth.accessToken
         if (token) {
             headers.set("authorization", `Bearer ${token}`)
