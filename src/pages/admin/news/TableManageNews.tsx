@@ -7,8 +7,10 @@ import TableAntd from "@/components/Table"
 import { ColumnsType } from "antd/es/table"
 import { FaEllipsis } from "react-icons/fa6"
 import { AlignType } from "rc-table/lib/interface"
+import { useGetCategoriesQuery } from "@/redux/services/categories/categories.service"
 const TableManageNews = ()=>{
     const keyword = useAppSelector((state) => state.search.keyword)
+    const categories = useGetCategoriesQuery("");
     const { data, isLoading } = useGetNewsQuery(keyword)
     const news = data as INews[]
     const getMenuActions = useMenuActions()
@@ -48,6 +50,19 @@ const TableManageNews = ()=>{
             ),
           },
           {
+            title: <span className="font-bold">Category</span>,
+            key: "category",
+            width: "10%",
+            render: (record: INews) => (
+              <span className="text-sm font-medium  flex gap-2 ">
+                {record?.categories?.map((catId) => {
+                  const cat = categories.data?.find((c) => `${c.id}` == catId);
+                  return cat ? <span className="p-2 rounded-full bg-[#fff4e6] " key={catId}>{cat.name}{" "}</span> : null;
+                }) || []}
+              </span>
+            ),
+          },
+          {
             title: <span className="font-bold">Published At</span>,
             key: "publish_at",
             width: "15%",
@@ -61,6 +76,7 @@ const TableManageNews = ()=>{
               </div>
             ),
           },
+         
         {
             title: <span className="text-center font-bold">Action</span>,
             key: "action",

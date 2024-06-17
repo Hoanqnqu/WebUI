@@ -15,7 +15,7 @@ const ModalNews = () => {
   const getModalContent = () => {
     switch (type) {
       case MODAL.UPDATE.NEWS:
-        return <ModalUpdate title="View News" data={data} />;
+        return <ModalUpdate title="Update News" data={data} />;
       case MODAL.VIEW.NEWS:
         return <ModalView title="View News" data={data} />;
       case  MODAL.ADD.NEWS:

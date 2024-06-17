@@ -45,6 +45,25 @@ const TableManageUsers = () => {
             render: (email: string) => <span className="text-sm font-medium">{email}</span>
         },
         {
+            title: <span className="font-bold">Role</span>,
+            key: "role",
+            width: "8%",
+            dataIndex: "role",
+            filters: [
+              { text: "Admin", value: "admin" },
+              { text: "User", value: "user" },
+            ],
+            onFilter: (value, record) => record.role === value,
+            render: (role: string) => (
+              <span
+                style={{ backgroundColor: role=='admin'?'#2C839A':'#1D5868'  }}
+                className={`rounded-2xl px-2 py-1.5 text-center text-xs font-semibold text-white`}
+              >
+                {role}
+              </span>
+            ),
+          },
+        {
             title: <span className="text-center font-bold">Action</span>,
             key: "action",
             width: "10%",
