@@ -12,3 +12,6 @@ export interface IOpenModalPayload {
     id?: string | number
     data?: any
 }
+
+
+
