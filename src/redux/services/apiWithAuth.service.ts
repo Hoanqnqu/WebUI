@@ -15,8 +15,9 @@ const baseQuery = fetchBaseQuery({
         // headers.set("Access-Control-Allow-Headers", "GET, POST, PATCH, PUT, DELETE, OPTIONS")
         // headers.set("Cross-Origin-Opener-Policy", "unsafe-none")
         const token = (getState() as RootState).auth.accessToken
+        console.log(token)
         if (token) {
-            headers.set("authorization", `Bearer ${token}`)
+            headers.set("Authorization", `Bearer ${token}`)
         }
         return headers
     }
