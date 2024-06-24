@@ -20,7 +20,7 @@ const ModalDelete = (props: IModal) => {
         <Spin spinning={isLoading} className="flex flex-col items-center">
             <Title>{title}</Title>
 
-            <p className=" mb-6 text-center font-medium">Are you sure you want to delete the utility {id}</p>
+            <p className=" mb-6 text-center font-medium">Are you sure you want to delete this category</p>
             <div className="flex w-full justify-end">
                 <Button onClick={onDelete} loading={isLoading} className={`border-none bg-red-500  text-white`}>
                     Delete

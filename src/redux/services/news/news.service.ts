@@ -43,4 +43,4 @@ export const newsApi = createCategoryWithAuth.injectEndpoints({
         }),
     })
 })
-export const { useGetNewsQuery, useCreateNewsMutation, useUpdateNewsMutation } = newsApi
+export const { useGetNewsQuery, useCreateNewsMutation, useUpdateNewsMutation, useDeleteNewsMutation } = newsApi

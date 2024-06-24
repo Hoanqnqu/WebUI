@@ -11,13 +11,14 @@ export type TServerMessage = {
 function useServerMessage({ data, error }: TServerMessage) {
     const dispatch = useAppDispatch()
     const isOpen = useAppSelector((state) => state.modal.isOpen)
-
+    console.log(data)
     useEffect(() => {
-        if (data && (data.status === 200 || data.success === 201)) {
-            message.success(data.message)
+        if (data && (data.status == 200 || data.status == 201)) {
+            console.log("2222")
+            message.success("Successfully")
             isOpen && dispatch(closeModal())
         } else if (error) {
-            message.error(error.data?.message)
+            message.error("Something was wrong")
         }
         // eslint-disable-next-line
     }, [data, error, dispatch])

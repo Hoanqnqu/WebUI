@@ -60,7 +60,10 @@ const ModalUpdate = (props: IModal) => {
                     title: news.title,
                     description: news.description,
                     content: news.content,
-                    categories: news.categories,
+                    categories: news.categories.map((catId: string) => {
+                        const cat = categories.data?.find((c) => `${c.id}` == catId)
+                        return cat}
+                    ),
                     image_url: news.image_url,
                     publish_at: moment(news.publish_at),
                 }}
@@ -81,6 +84,7 @@ const ModalUpdate = (props: IModal) => {
                 </Form.Item>
                 <Form.Item
                     className="w-full"
+
                     name="description"
                     rules={[{ required: true, message: "Please input description!" }]}
                 >

@@ -1,6 +1,6 @@
 export interface ICategory {
     name: string
-    id: number
+    id: string
 }
 export interface ICategoriesResponse {
     data: ICategory[]

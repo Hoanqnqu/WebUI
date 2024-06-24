@@ -1,19 +1,17 @@
-
 import Title from "@/components/Modal/Title";
 import useServerMessage from "@/hooks/useServerMessage";
 import { IModal } from "@/interfaces/modal.interface";
-import { useDeleteNewsMutation } from "@/redux/services/news/news.service";
+import { useDeleteUserMutation } from "@/redux/services/users/user.service";
 import { Button, Spin } from "antd";
 
 const ModalDelete = (props: IModal) => {
-  const { title, data: news } = props;
-  const { id } = news;
+  const { title, data: user } = props;
+  const { id } = user;
 
-  const [deleteNews, { data, error, isLoading }] =
-  useDeleteNewsMutation();
+  const [deleteUser, { data, error, isLoading }] = useDeleteUserMutation();
 
   const onDelete = async () => {
-    await deleteNews(id);
+    await deleteUser(id);
   };
 
   useServerMessage({ data: data!, error: error });
@@ -23,7 +21,7 @@ const ModalDelete = (props: IModal) => {
       <Title>{title}</Title>
 
       <p className=" mb-6 text-center font-medium">
-        Are you sure you want to delete this news?
+        Are you sure you want to delete this user?
       </p>
       <div className="flex w-full justify-end">
         <Button

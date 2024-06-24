@@ -7,6 +7,7 @@ import { INews } from "@/interfaces/news.interface";
 import ModalView from "./View";
 import ModalAdd from "./Add";
 import ModalUpdate from "./Update";
+import ModalDelete from "./Delete";
 // import ModalDelete from "./Delete";
 
 const ModalNews = () => {
@@ -20,6 +21,8 @@ const ModalNews = () => {
         return <ModalView title="View News" data={data} />;
       case  MODAL.ADD.NEWS:
         return <ModalAdd title="Add News" />;
+      case MODAL.DELETE.NEWS:
+        return <ModalDelete title="Remove News" data={data}/>  
       default:
         return null;
     }
