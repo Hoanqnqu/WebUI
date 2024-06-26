@@ -123,7 +123,6 @@ const ModalAdd = (props: IModal) => {
         <Form.Item
           className="w-full"
           name="url"
-          rules={[{ required: true, message: "Please input author!" }]}
         >
           <Input placeholder="URL" />
         </Form.Item>

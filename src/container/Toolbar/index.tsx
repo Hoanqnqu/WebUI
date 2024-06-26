@@ -15,13 +15,13 @@ const TableToolbar: React.FC<TableToolbarProps> = ({ type }) => {
         <div className="mb-4 flex justify-between">
             <Search />
 
-            <button
+            {type!= PAGE.USER &&  <button
                 onClick={() => dispatch(openModal({ type: MODAL.ADD[type] }))}
                 className="flex items-center space-x-2 rounded-xl bg-primary px-3 py-2 text-white"
             >
                 <FaPlus className="h-3 w-3" />
                 <span className="text-xs font-bold tracking-wide">Add new</span>
-            </button>
+            </button>}
         </div>
     )
 }

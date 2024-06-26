@@ -60,12 +60,14 @@ const ModalUpdate = (props: IModal) => {
                     title: news.title,
                     description: news.description,
                     content: news.content,
-                    categories: news.categories.map((catId: string) => {
+                    categories: news.categories.filter((catId: string) => {
                         const cat = categories.data?.find((c) => `${c.id}` == catId)
-                        return cat}
+                        return cat?.id
+                    }
                     ),
                     image_url: news.image_url,
                     publish_at: moment(news.publish_at),
+                    url: news.url
                 }}
             >
                 <Form.Item
@@ -138,6 +140,12 @@ const ModalUpdate = (props: IModal) => {
                             })) || []
                         }
                     />
+                </Form.Item>
+                <Form.Item
+                    className="w-full"
+                    name="url"
+                    >
+                    <Input placeholder="URL" />
                 </Form.Item>
                 <Form.Item className="w-full">
                     <Button
